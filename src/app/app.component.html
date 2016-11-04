@@ -1,0 +1,24 @@
+<header>
+  <div class="row">
+    <div class="col-md-2 text-center">
+      <img id="logo" src="img/logo-pickles.png" alt="logo pickles" />
+    </div>
+    <div class="col-md-10">
+      <ul class="nav nav-tabs">
+      	<li><a [routerLink]="['/']"><i class="ion-ios-home"></i></a></li>
+        <li><a href=#><i class="ion-person-add"></i></a></li>
+      	<li><a href=#><i class="ion-map"></i></a></li>
+      	<li><a [routerLink]="['/drivers']"><i class="ion-ios-list"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main>
+	<router-outlet></router-outlet>
+</main>
+
+
+<footer>
+  <h6>Pickles app v.1.0.0</h6>
+</footer>

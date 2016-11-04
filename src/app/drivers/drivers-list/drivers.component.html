@@ -1,0 +1,94 @@
+<!-- button show/hide driver form -->
+<div class="button-add" (click)="toggleForm(driver)">
+  <i class="ion-ios-personadd"></i>
+</div>
+<!-- add driver form -->
+<form [hidden]="!visible" class="editform" class="form-add">
+  <input type="text" [(ngModel)]="name" name="name" placeholder="name">
+  <input type="text" [(ngModel)]="email" name="email" placeholder="email">
+  <input type="text" [(ngModel)]="longitude" name="longitude" placeholder="longitude">
+  <input type="text" [(ngModel)]="latitude" name="latitude" placeholder="latitude">
+  <button type="submit" (click)="createDriver()">Save</button>
+</form>
+
+<div class="row">
+  <!-- driver list -->
+  <div class="col-xs-12 col-md-4">
+    <h3>Liste des drivers</h3>
+    <ul class="list-group">
+      <!-- loop driver -->
+      <li class="list-group-item" *ngFor="let driver of drivers" >
+        <div class="title">
+          <h4>{{ driver.name }}</h4>
+          <button (click)="toggleListForm(driver.id)"><i class="ion-edit"></i></button>
+          <button (click)="getPositionDriver(driver)"><i class="ion-ios-location"></i></button>
+          <button (click)="deleteDriver(driver)"><i class="ion-close-round"></i></button>
+        </div>
+        <p><i class="ion-paper-airplane"></i><a href="mailto:{{driver.email}}">{{driver.email}}</a></p>
+        <!-- modify driver form -->
+        <form *ngIf="hidden" data-name="{{driver.id}}" class="editform" (submit)="updateDriver(driver)">
+          <input type="text" name="driver.latitude" [(ngModel)]="driver.latitude">
+          <input type="text" name="driver.longitude" [(ngModel)]="driver.longitude">
+          <button type="submit">Save</button>
+        </form>
+      </li>
+    </ul>
+  </div>
+  <!-- google map & input search -->
+  <div class="col-xs-12 col-md-8">
+    <div class="input-group">
+      <!-- adress form -->
+      <form (submit)="submitSearch()" class="adressform">
+        <input id="google_adress" name="google_adress"  type="text" class="input-block-level" ngControl="location" type="search" placeholder="Recherchez une adresse" >
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="submit"><i class="ion-ios-search-strong"></i></button>
+        </span>
+      </form>
+      <!-- radius form -->
+      <form (submit)="submitRadius()" class="radiusform">
+        <input id="google_radius" name="google_radius"  type="text" class="input-block-level" ngControl="location" type="search" placeholder="radius">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="submit"><i class="ion-ios-search-strong"></i></button>
+        </span>
+      </form>
+    </div>
+    <!-- google map zone -->
+    <sebm-google-map
+    [latitude]="latitude"
+    [longitude]="longitude"
+    [zoom]="zoom">
+
+    <sebm-google-map-marker *ngFor="let driver of drivers"
+    [latitude]="driver.latitude"
+    [longitude]="driver.longitude"
+    [title]="driver.name"
+    [label]="driver.name"
+    >
+    <sebm-google-map-info-window>
+      <strong>{{driver.name}}</strong>
+    </sebm-google-map-info-window>
+  </sebm-google-map-marker>
+  <sebm-google-map-circle
+  [latitude]="latitude"
+  [longitude]="longitude"
+  [radius]="radius"
+  [fillColor]="'blue'"
+  [circleDraggable]="false"
+  [editable]="false">
+</sebm-google-map-circle>
+</sebm-google-map>
+<div class="driverinArea">
+  <h3>driver se trouvant à {{radius}}m de l'adresse indiquée</h3>
+  <ul>
+      <li class="list-group-item" *ngFor="let driver of drivers " >
+        <!-- <h4 *ngIf="ifClose(driver)">{{ driver.name }}</h4> -->
+    </li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<!-- test check API {{ drivers | json}} -->
+
+<router-outlet></router-outlet>

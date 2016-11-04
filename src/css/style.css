@@ -1,0 +1,227 @@
+/*LAYOUT*/
+body{
+  background-color: #004D92;
+  font-family: 'Lato', sans-serif;
+}
+header{
+  background:#CBEC01;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+footer{
+  padding: 20px;
+  background: #002145;
+  color: white;
+  margin-top: 20px;
+}
+h1,h2,h3{
+  color: white;
+}
+h3{
+  color: white;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 3px;
+  height: 55px;
+  padding-top: 20px;}
+  h4{
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #003463;
+    font-weight: bolder;
+  }
+  h6{
+    font-family: Lato;
+    letter-spacing: 1px;
+    font-style: italic;
+  }
+  button{
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #004d92;
+  }
+  :focus {
+    outline: -webkit-focus-ring-color auto 0px;
+    outline-color: -webkit-focus-ring-color;
+    outline-style: auto;
+    outline-width: 0px;
+  }
+  button:focus{
+    outline: -webkit-focus-ring-color auto 0px;
+    outline-color: -webkit-focus-ring-color;
+    outline-style: auto;
+    outline-width: 0px;
+  }
+  [hidden] {
+    display: none !important;
+    transition: 1s ease-in;
+  }
+  input[type=search]{
+    border:none;
+  }
+  input{
+    padding-left: 10px;
+  }
+  /* pickles layout*/
+  #logo{
+    margin: 15px;
+  }
+
+  .loader{
+    position:absolute;
+    top: 45%;
+    left: 45%;
+  }
+  .nav-tabs{
+    border:none;
+  }
+  .nav-tabs>li{
+    float: right;
+    padding-right: 10px;
+  }
+  .nav-tabs>li>a:hover {
+    border-color: white;
+  }
+  .nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background: none;
+    border: none;
+  }
+  header li i{
+    font-size:35px;
+    margin: 20px;
+    color: #004D92;
+    text-shadow: 3px 3px 3px rgba(0, 77, 146, 0.3);
+  }
+  .sebm-google-map-container {
+    height: 500px;
+  }
+  .input-group{
+    margin: 20px 0px;
+    width: 100%;
+  }
+  .input-group form{
+    display: inline-flex;
+  }
+  .form-control{
+    border-radius: 0px;
+    height: 44px;
+  }
+  .btn{
+    border-radius: 0px;
+    height: 44px;
+  }
+  .btn-default{
+    color: #333;
+    background-color: #cbec01;
+    border: none;
+  }
+  .row{
+    padding: 0px 20px;
+  }
+  .list-group{
+    overflow: auto;
+    height: 100vh;
+  }
+  .list-group-item:first-child {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+  }
+  .list-group-item:last-child {
+    margin-bottom: 0;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+  .ion-paper-airplane{
+    padding-right:5px;
+    color: #004d92;
+  }
+  .editform{
+    margin: 20px;
+    display: block;
+  }
+  .editform input{
+    width: 25%;
+    height: 44px;
+  }
+  .editform button {
+    background: #004d92;
+    color: white;
+    padding: 3px 20px;
+    border:none;
+  }
+  .editform button:hover{
+    background: #cbec01;
+    color: #004d92;
+  }
+  .button-add {
+    background: #cbec01;
+    width: 50px;
+    height: 50px;
+    margin: 18px;
+    color: #6ba539;
+    border-radius: 50px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    cursor: pointer;
+    transition: 0.5s ease-in;
+    position: fixed;
+    z-index: 99999;
+    right: 0;
+  }
+  .button-add:hover {
+    background: white;
+  }
+
+  .button-add i.ion-ios-personadd {
+    position: absolute;
+    left: 25%;
+    font-size: 35px;
+  }
+  .form-add {
+    position: fixed;
+    background: rgb(0, 77, 146);
+    padding: 20px;
+    z-index: 99999;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    right: 8%;
+    width: 80%;
+    transition: 1s ease-in;
+  }
+  .form-add input,button{
+    height: 40px;
+    margin-left: 25px;
+  }
+  .form-add button{
+    width: 10%;
+  }
+  .title{
+    display: inline-flex;
+  }
+  .title button{
+    border: none;
+    background: white;
+    font-size: 20px;
+  }
+  .title button:hover{
+    color: #cbec01;
+  }
+  i.ion-ios-search-strong{
+    font-size: 20px;
+  }
+  .adressform{
+    width: 65%;
+  }
+  .adressform input{
+    width: 80%;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+  .radiusform input{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+  .adressform button, .radiusform button{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: 0px;
+}
